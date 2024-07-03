@@ -1,0 +1,12 @@
+{
+    "title": "Rules Engine",
+    "name": "rules",
+    "package-type": "module",
+    "version": "1.0.0",
+    "class": "Rules",
+    "type": "package",
+    "description": "Rules engine.",
+    "repository": "https://github.com/arikaim/rules-module.git",
+    "require": {
+    }  
+}
