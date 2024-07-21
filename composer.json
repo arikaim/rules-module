@@ -1,7 +1,7 @@
 {
-    "name": "arikaim/parsers-module",
-    "description": "Arikam Parsers Module",
-    "keywords": ["Module","Parsers","Arikaim Parsers module"],
+    "name": "arikaim/rules-module",
+    "description": "Arikam rules engine module",
+    "keywords": ["Module","Parsers","Arikaim rules module"],
     "type": "arikaim-module",
     "license": "GPL-3.0-or-later",
     "authors": [{

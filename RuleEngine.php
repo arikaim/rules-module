@@ -20,11 +20,29 @@ use nicoSWD\Rule\TokenStream\TokenStreamFactory;
 use nicoSWD\Rule\TokenStream\CallableUserMethodFactory;
 use nicoSWD\Rule\Parser\Parser;
 
-
+/**
+ *  Rule engine factory class
+ */
 class RuleEngine
 {
+    /**
+     * Ref to token stream factory
+     * @var 
+     */
     private static $tokenStreamFactory;
+
+    /**
+     * Ref tor token factory
+     * 
+     * @var object|null
+     */
     private static $tokenFactory;
+
+    /**
+     * Ref to compiler
+     * 
+     * @var object|null
+     */
     private static $compiler;
     private static $javaScript;
     private static $expressionFactory;
@@ -32,7 +50,7 @@ class RuleEngine
     private static $tokenizer;
     private static $evaluator;
 
-    public static function createParser(array $variables = [])
+    public static function createParser(array $variables = []): object
     {
         return new Parser(
             self::ast($variables),
@@ -52,7 +70,7 @@ class RuleEngine
 
     public static function tokenFactory(): object
     {
-        if (!isset(self::$tokenFactory)) {
+        if (isset(self::$tokenFactory) == false) {
             self::$tokenFactory = new TokenFactory();
         }
 
@@ -61,7 +79,7 @@ class RuleEngine
 
     public static function compiler(): object
     {
-        if (!isset(self::$compiler)) {
+        if (isset(self::$compiler) == false) {
             self::$compiler = new CompilerFactory();
         }
 
@@ -88,7 +106,7 @@ class RuleEngine
 
     public static function createTokenizer(): object
     {
-        if (!isset(self::$tokenizer)) {
+        if (isset(self::$tokenizer) == false) {
             self::$tokenizer = new Tokenizer(self::javascript(), self::tokenFactory());
         }
 
@@ -97,7 +115,7 @@ class RuleEngine
 
     public static function javascript(): object
     {
-        if (!isset(self::$javaScript)) {
+        if (isset(self::$javaScript) == false) {
             self::$javaScript = new JavaScript();
         }
 
@@ -106,8 +124,8 @@ class RuleEngine
 
     public static function tokenStreamFactory(): object
     {
-        if (!isset(self::$tokenStreamFactory)) {
-            self::$tokenStreamFactory = new TokenStreamFactory();
+        if (isset(self::$tokenStreamFactory) == false) {
+            self::$tokenStreamFactory == new TokenStreamFactory();
         }
 
         return self::$tokenStreamFactory;
@@ -115,7 +133,7 @@ class RuleEngine
 
     public static function expressionFactory(): object
     {
-        if (!isset(self::$expressionFactory)) {
+        if (isset(self::$expressionFactory) == false) {
             self::$expressionFactory = new ExpressionFactory();
         }
 
@@ -124,7 +142,7 @@ class RuleEngine
 
     public static function userMethodFactory(): object
     {
-        if (!isset(self::$userMethodFactory)) {
+        if (isset(self::$userMethodFactory) == false) {
             self::$userMethodFactory = new CallableUserMethodFactory();
         }
 
