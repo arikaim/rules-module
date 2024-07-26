@@ -10,7 +10,6 @@
 namespace Arikaim\Modules\Rules;
 
 use nicoSWD\Rule\TokenStream\Token\TokenType;
-
 use Arikaim\Modules\Rules\RuleEngine;
 
 /**
@@ -49,7 +48,6 @@ class Rule
         $ruleCode = \html_entity_decode($ruleCode);
         $tokenizer = RuleEngine::createTokenizer();
         $tokens = $tokenizer->tokenize($ruleCode);
-
         $code = '';
 
         foreach ($tokens as $token) {
