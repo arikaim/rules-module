@@ -110,7 +110,7 @@ class Rule
     public static function isTrue(string $rule, array $variables = []): bool
     {
         $variables = Self::mergeRuleVariables($rule,$variables);
-
+       
         return RuleEngine::evaluator()->evaluate(Self::parse($rule,$variables));
     }
 

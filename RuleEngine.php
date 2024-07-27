@@ -125,7 +125,7 @@ class RuleEngine
     public static function tokenStreamFactory(): object
     {
         if (isset(self::$tokenStreamFactory) == false) {
-            self::$tokenStreamFactory == new TokenStreamFactory();
+            self::$tokenStreamFactory = new TokenStreamFactory();
         }
 
         return self::$tokenStreamFactory;
